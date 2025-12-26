@@ -130,6 +130,52 @@ a{
     cursor: pointer;
 }
 
+.burger{
+    display: block; width: 18px; height: 2px;
+    margin: 0 auto; background: var(--text);
+    position: relative;
+}
+
+.burger::before{ top:-6px; }
+.burger::after{ top: 6px; }
+
+.nav__panel{
+    position: absolute; right: 0; top: 62px;
+    width:min(340px, 100%);
+    background: rgba(2, 6, 23,.92);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.nav__panelList{
+    list-style: none; margin: 0; padding: 10px;
+    display: grid; gap: 6px;
+}
+
+.panel-link, .panel-cta{
+    display: block; text-decoration: none;
+    padding: 12px; border-radius: 12px;
+}
+
+.panel-link {
+    color: #b1c6f0; background: rgba(148, 163, 184,.06);
+}
+
+.panel-link:hover{ background: rgba(148, 163, 184,.06); color: var(--text);}
+.panel-divider{ height: 1px; background: var(--border); margin: 6px 0;}
+.panel-cta{ text-align: center; font-weight: 900; background: var(--brand); color: #04101f;}
+    
+/* === MEDIA QUERIES === */
+
+@media (max-width: 760px){
+    .nav__menu{ display: none;}
+    .nav__toggle{ display: inline-grid; place-items: center;}
+    .nav__cta{display: none;}
+}
+
+
 /* ==== FOOTER ==== */
 .site-footer{
     padding: 24px 16px;
